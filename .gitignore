@@ -28,6 +28,15 @@ test-output
 .CVS
 .hg*
 
+# Idea
+.idea/
+*.iml
+*.iws
+
+# Maven
+log/
+target/
+
 # switch to regexp syntax.
 #  syntax: regexp
 #  ^\.pc/
