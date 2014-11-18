@@ -9,7 +9,7 @@ public class StorageService {
 	
 	private List<Person> db = new ArrayList<Person>();
 	
-	public void add(Person person){
+	public void add(Person person) {
 		//Person newPerson = new Person(person.getName(), person.getSurname(), person.getSex(), person.getHobby(), person.getOpis(), person.getEducation());
 		db.add(person);
 	}

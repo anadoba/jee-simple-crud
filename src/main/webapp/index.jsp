@@ -5,12 +5,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Demo application</title>
+        <title>JEE Project 1 - Cars</title>
+        <link href='bootstrap/css/bootstrap.css' rel="stylesheet">
     </head>
-    <body>
-        <h2>Simple demo application with Java EE 6 Servlet (3.0) and JSP</h2>
-        <p><a href="hello">See greetings from servlet</a></p>
-        <p><a href="form">Fill a form</a></p>
-        <p><a href="getPersonData.jsp">Fill a Person form</a></p>
+    <body class="container theme-showcase">
+        <h2 class="page-header">Cars - Adam Nadoba</h2>
+        <p><a class='btn btn-success' href="cars.jsp"><b>Get started</b></a></p>
     </body>
 </html>
