@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.UUID;
 
 /**
  * Gets the completed form and modifies the Storage
@@ -21,6 +22,14 @@ public class ReceivedDataServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         carStorageService = (CarStorageService) getServletContext().getAttribute("carStorageService");
+
+        if (request.getParameter("delete") != null) {
+            UUID uuid = UUID.fromString(request.getParameter("delete"));
+            carStorageService.delete(uuid);
+
+            response.sendRedirect("cars");
+            return;
+        }
 
         String make = request.getParameter("make");
         String model = request.getParameter("model");
