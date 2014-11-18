@@ -16,7 +16,7 @@ public class Car {
 
 	public enum BodyStyle { coupe, estate, hatchback, sedan }
 
-	public enum FuelType { petrol, diesel, autogas, hybrid }
+	public enum FuelType { petrol, diesel, autogas }
 
 	public Car() {
 	}

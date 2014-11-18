@@ -24,16 +24,17 @@ public class ReceivedDataServlet extends HttpServlet {
 
         String make = request.getParameter("make");
         String model = request.getParameter("model");
+        Car.BodyStyle bodyStyle = Car.BodyStyle.valueOf(request.getParameter("bodyStyle"));
         int engineCapacity = Integer.parseInt(request.getParameter("engineCapacity"));
         int horsepower = Integer.parseInt(request.getParameter("horsepower"));
+        Car.FuelType fuelType = Car.FuelType.valueOf(request.getParameter("fuelType"));
         String color = request.getParameter("color");
 
-        Car newCar = new Car(make, model, Car.BodyStyle.coupe, Car.FuelType.petrol, engineCapacity, horsepower, color);
+        Car newCar = new Car(make, model, bodyStyle, fuelType, engineCapacity, horsepower, color);
 
         carStorageService.store(newCar);
 
-        // przekierowanie do index
-        request.setAttribute("carStorageService", carStorageService);
+        // przekierowanie do tabeli
         response.sendRedirect("cars");
     }
 

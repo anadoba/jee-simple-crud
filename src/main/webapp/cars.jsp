@@ -18,16 +18,20 @@
                 <tr>
                     <th>Make</th>
                     <th>Model</th>
+                    <th>Body style</th>
                     <th>Engine capacity</th>
                     <th>Horsepower</th>
+                    <th>Fuel type</th>
                     <th>Color</th>
                 </tr>
-                <c:forEach var="car" items="${carsDB}">
+                <c:forEach var="car" items="${cars}">
                     <tr>
                         <td>${car.make}</td>
                         <td>${car.model}</td>
+                        <td>${car.bodyStyle}</td>
                         <td>${car.engineCapacity} cc</td>
                         <td>${car.horsepower} hp</td>
+                        <td>${car.fuelType}</td>
                         <td>${car.color}</td>
                     </tr>
                 </c:forEach>

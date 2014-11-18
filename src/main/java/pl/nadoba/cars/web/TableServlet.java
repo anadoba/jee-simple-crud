@@ -23,7 +23,7 @@ public class TableServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         carStorageService = (CarStorageService) getServletContext().getAttribute("carStorageService");
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("cars.jsp");
-        request.setAttribute("carsDB", carStorageService.getMap().values());
+        request.setAttribute("cars", carStorageService.getMap().values());
 
         requestDispatcher.include(request, response);
     }
