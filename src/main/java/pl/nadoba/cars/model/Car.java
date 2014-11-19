@@ -6,7 +6,7 @@ import java.util.UUID;
 public class Car {
 
 	private UUID uuid = UUID.randomUUID();
-	private String make = "BMW";
+	private String make = "";
 	private String model = "";
 	private BodyStyle bodyStyle = BodyStyle.coupe;
 	private FuelType fuelType = FuelType.petrol;
@@ -61,5 +61,37 @@ public class Car {
 
 	public String getColor() {
 		return color;
+	}
+
+	public void setUuid(UUID uuid) {
+		this.uuid = uuid;
+	}
+
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public void setBodyStyle(BodyStyle bodyStyle) {
+		this.bodyStyle = bodyStyle;
+	}
+
+	public void setFuelType(FuelType fuelType) {
+		this.fuelType = fuelType;
+	}
+
+	public void setEngineCapacity(int engineCapacity) {
+		this.engineCapacity = engineCapacity;
+	}
+
+	public void setHorsepower(int horsepower) {
+		this.horsepower = horsepower;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 }

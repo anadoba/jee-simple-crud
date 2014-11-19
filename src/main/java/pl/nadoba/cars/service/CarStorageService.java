@@ -26,4 +26,8 @@ public class CarStorageService {
 		return cars;
 	}
 
+	public void editCar(UUID uuid, Car car) {
+		cars.remove(uuid);
+		cars.put(uuid, car);
+	}
 }

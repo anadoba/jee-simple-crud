@@ -31,6 +31,31 @@ public class ReceivedDataServlet extends HttpServlet {
             return;
         }
 
+        if (request.getParameter("editUUID") != null) {
+            Car car = carStorageService.getCar(UUID.fromString(request.getParameter("editUUID")));
+
+            String make = request.getParameter("make");
+            String model = request.getParameter("model");
+            Car.BodyStyle bodyStyle = Car.BodyStyle.valueOf(request.getParameter("bodyStyle"));
+            int engineCapacity = Integer.parseInt(request.getParameter("engineCapacity"));
+            int horsepower = Integer.parseInt(request.getParameter("horsepower"));
+            Car.FuelType fuelType = Car.FuelType.valueOf(request.getParameter("fuelType"));
+            String color = request.getParameter("color");
+
+            car.setMake(make);
+            car.setModel(model);
+            car.setBodyStyle(bodyStyle);
+            car.setEngineCapacity(engineCapacity);
+            car.setHorsepower(horsepower);
+            car.setFuelType(fuelType);
+            car.setColor(color);
+
+            carStorageService.editCar(UUID.fromString(request.getParameter("editUUID")), car);
+
+            response.sendRedirect("cars");
+            return;
+        }
+
         String make = request.getParameter("make");
         String model = request.getParameter("model");
         Car.BodyStyle bodyStyle = Car.BodyStyle.valueOf(request.getParameter("bodyStyle"));

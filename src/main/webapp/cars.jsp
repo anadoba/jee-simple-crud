@@ -33,6 +33,7 @@
                         <td>${car.horsepower} hp</td>
                         <td>${car.fuelType}</td>
                         <td>${car.color}</td>
+                        <td><a class='btn btn-warning' href='edit?uuid=${car.uuid}'>Edit</a></td>
                         <td><a class='btn btn-danger' href='modify?delete=${car.uuid}'>Delete</a></td>
                     </tr>
                 </c:forEach>
